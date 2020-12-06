@@ -8,6 +8,7 @@ import { FirebaseService } from "./services/firebase.service";
 })
 export class AppComponent implements OnInit {
   title = "angular-project-assignment";
+  
   isSignedIn = false;
   constructor(public firebaseService: FirebaseService) {}
   ngOnInit() {
