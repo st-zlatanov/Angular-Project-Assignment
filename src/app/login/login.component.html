@@ -1,0 +1,22 @@
+<div class="login-container">
+    <div class="login">
+        <form #i="ngForm" (ngSubmit)="loginUser(i)">
+            <fieldset>
+                <h1>Login</h1>
+                <p class="email">
+                    <label for="email">Email:</label>
+                    <br>
+                    <input ngModel required type="email" id="email" name="username" placeholder="Example: example@abc.bg">
+                </p>
+                <p class="password">
+                    <label for="password">Password:</label>
+                    <br>
+                    <input ngModel required type="password" name="password" id="password">
+                </p>
+                <p class="submit">
+                    <button class="btn-submit">Log In</button>
+                </p>
+            </fieldset>
+        </form>
+    </div>
+</div>

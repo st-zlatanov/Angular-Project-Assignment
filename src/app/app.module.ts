@@ -1,30 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFireModule} from '@angular/fire'
+
+import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { FirebaseService } from './services/firebase.service';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HeaderComponent } from './core/header/header.component';
+import { FooterComponent } from './core/footer/footer.component';
+import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-    AngularFireModule.initializeApp({
-      apiKey: "AIzaSyC_uLCOgAWt888XwvdbEMvH5x2cWbi_R9E",
-      authDomain: "angular-project-assignment.firebaseapp.com",
-      projectId: "angular-project-assignment",
-      storageBucket: "angular-project-assignment.appspot.com",
-      messagingSenderId: "473012840057",
-      appId: "1:473012840057:web:1a888e45488b97244d56a8"
-    })
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    FormsModule,
+    AngularFireDatabaseModule
+    
   ],
-  providers: [FirebaseService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

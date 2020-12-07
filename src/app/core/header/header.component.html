@@ -1,0 +1,34 @@
+<header class="header">
+    <div class="header-nav">
+        <div class="header-logo">
+            <a routerLink="/home">Motor Trend</a>
+        </div>
+        <p *ngIf="isAuth">Welcome, {{ user.email }}!</p>
+        <div class="hamburger">
+            <label for="ham-check" hidden><i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="ham-check" hidden>
+            <div class="header-menu">
+                <ul *ngIf="isAuth">
+                    <li>
+                        <a routerLink="/about">About us</a>
+                    </li>
+                    <li>
+                        <a routerLink="/comments">Your Comments</a>
+                    </li>
+                    <li>
+                        <button (click)="logoutUser($event)">Logout</button>
+                    </li>
+                </ul>
+                <ul *ngIf="!isAuth">
+                    <li>
+                        <a routerLink="/login">Login</a>
+                    </li>
+                    <li>
+                        <a routerLink="/register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</header>

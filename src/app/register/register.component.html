@@ -1,0 +1,27 @@
+<div class="register-container">
+    <div class="register">
+        <form #i="ngForm" (ngSubmit)="submitForm(i)">
+            <fieldset>
+                <h1>Register</h1>
+                <p class="email">
+                    <label for="email">Email:</label>
+                    <br>
+                    <input required ngModel type="email" id="email" name="username" placeholder="Example: abc@abc.bg">
+                </p>
+                <p class="password">
+                    <label for="password">Password</label>
+                    <br>
+                    <input required ngModel type="password" id="password" name="password">
+                </p>
+                <p class="password">
+                    <label for="rep-password">Repeat Password</label>
+                    <br>
+                    <input required ngModel type="password" id="rep-password" name="repassword">
+                </p>
+                <p class="submit field">
+                    <button class="btn-submit" [disabled]="i.invalid" >Sign Up</button>
+                </p>
+            </fieldset>
+        </form>
+    </div>
+</div>

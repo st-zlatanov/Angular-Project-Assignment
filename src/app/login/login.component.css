@@ -1,0 +1,10 @@
+.login-container {
+    width: 65%;
+    margin: 0 auto;
+    text-align: start;
+}
+
+.login {
+    align-items: center;
+    padding: 3em;
+}

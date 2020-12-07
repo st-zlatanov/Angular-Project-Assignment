@@ -1,0 +1,13 @@
+.register-container {
+    /* min-height: 79.5vh; */
+    width: 65%;
+    margin: 0 auto;
+    text-align: start;
+}
+
+.register {
+    align-items: center;
+    padding: 3em;
+}
+
+

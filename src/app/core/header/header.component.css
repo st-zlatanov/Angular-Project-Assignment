@@ -1,0 +1,42 @@
+.header {
+    margin-bottom: 1em;
+    background-color: lightskyblue;
+}
+
+.header-nav p {
+    color: white;
+}
+
+.header-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header-nav ul,
+ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-nav ul li+li,
+ul li+li {
+    margin-left: 1.2em;
+}
+
+.header-logo {
+    font-size: 2.5em;
+    margin-right: 3em;
+}
+
+.header-menu {
+    font-size: 1.2em;
+}
+
+.header-menu ul li{
+    list-style: none;
+}
+
