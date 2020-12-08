@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-
+import { Router } from '@angular/router';
 import { throwError } from 'rxjs';
 
 
@@ -11,7 +11,7 @@ import { throwError } from 'rxjs';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private fireAuth: AngularFireAuth) { }
+  constructor(private fireAuth: AngularFireAuth,private router: Router) { }
 
   ngOnInit(): void {
     this.fireAuth.authState.subscribe(user => console.log(user?.toJSON(), 'console was called'));
@@ -22,10 +22,8 @@ export class RegisterComponent implements OnInit {
     let { username, password, repassword } = i.value;
 
     if (password === repassword) {
-      this.fireAuth.createUserWithEmailAndPassword(username, password).then(a => console.log(a)).catch(err => throwError(err));
+      this.fireAuth.createUserWithEmailAndPassword(username, password).then(a => this.router.navigate(['home'])).catch(err => throwError(err));
     }
-    console.log(i);
-    console.log('the form was submitted!', username, password, repassword);
   }
 
 }

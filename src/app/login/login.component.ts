@@ -16,10 +16,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  loginUser(i: any) {
-    let { username, password } = i.value;
-    let testRoute = 'about';
-    this.fireAuth.signInWithEmailAndPassword(username, password).then(a => this.router.navigate([testRoute])).catch(err => throwError(err));
+  loginUser(f: any) {
+    let { username, password } = f.value;
+    this.fireAuth.signInWithEmailAndPassword(username, password).then(a => this.router.navigate(['home'])).catch(err => throwError(err));
   }
+ 
 
 }

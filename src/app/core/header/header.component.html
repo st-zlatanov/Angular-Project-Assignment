@@ -3,12 +3,14 @@
         <div class="header-logo">
             <a routerLink="/home">Motor Trend</a>
         </div>
-        <p *ngIf="isAuth">Welcome, {{ user.email }}!</p>
         <div class="hamburger">
             <label for="ham-check" hidden><i class="fas fa-bars"></i></label>
             <input type="checkbox" id="ham-check" hidden>
             <div class="header-menu">
                 <ul *ngIf="isAuth">
+                    <li>
+                        <a>Welcome, {{ user.email }}!</a>
+                    </li>
                     <li>
                         <a routerLink="/about">About us</a>
                     </li>
