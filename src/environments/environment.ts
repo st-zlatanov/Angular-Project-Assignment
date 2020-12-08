@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyC_uLCOgAWt888XwvdbEMvH5x2cWbi_R9E",
-      authDomain: "angular-project-assignment.firebaseapp.com",
-      projectId: "angular-project-assignment",
-      storageBucket: "angular-project-assignment.appspot.com",
-      messagingSenderId: "473012840057",
-      appId: "1:473012840057:web:1a888e45488b97244d56a8"
+    apiKey: "AIzaSyBUoFpJs2nrSZaVba2r90zrgoTtEkHCVdE",
+    authDomain: "angular-blog-project.firebaseapp.com",
+    projectId: "angular-blog-project",
+    storageBucket: "angular-blog-project.appspot.com",
+    messagingSenderId: "947752224900",
+    appId: "1:947752224900:web:c8c7950bb0785e061e1ad1"
   }
 };
 
