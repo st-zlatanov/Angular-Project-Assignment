@@ -19,6 +19,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
     
   ],
   providers: [],
