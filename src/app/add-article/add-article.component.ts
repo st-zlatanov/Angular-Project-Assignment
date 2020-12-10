@@ -4,8 +4,11 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
+  FormControl
 } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
+import { AngularFireAuth } from '@angular/fire/auth';
+
 
 @Component({
   selector: "app-add-article",
@@ -18,7 +21,8 @@ export class AddArticleComponent implements OnInit {
   constructor(
     public crudApi: CrudService,
     public fb: FormBuilder,
-    public toastr: ToastrService
+    public toastr: ToastrService,
+    private fireAuth: AngularFireAuth
   ) {}
 
   ngOnInit() {
@@ -29,8 +33,8 @@ export class AddArticleComponent implements OnInit {
   articlForm() {
     this.articleForm = this.fb.group({
       title: ["", [Validators.required, Validators.minLength(2)]],
-      author: [""],
-      description: [""],
+      author: new FormControl(localStorage.getItem('email')),
+      description: ["",[Validators.required]],
     });
   }
 
@@ -56,5 +60,9 @@ export class AddArticleComponent implements OnInit {
       this.articleForm.controls["title"].value + " successfully added!"
     );
     this.ResetForm();
+  }
+
+  getCurrentUser(){
+    return localStorage.getItem('email')
   }
 }
