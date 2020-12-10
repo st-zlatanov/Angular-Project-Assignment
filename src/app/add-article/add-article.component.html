@@ -1,5 +1,5 @@
 <div class="pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Add Article</h1>
+  <h1 class="h2">Add Part</h1>
 </div>
 
 <form [formGroup]="articleForm" (ngSubmit)="submitArticleData()" novalidate>
@@ -8,15 +8,15 @@
       <div class="row">
 
         <div class="col-md-12 mb-3">
-          <label>Title</label>
-          <input type="text" formControlName="title" class="form-control" required>
-          <p *ngIf="title.touched && title.invalid" class="error"><sup>*</sup>Please enter valid title</p>
-          <p *ngIf="title.errors?.minlength" class="error"><sup>*</sup>Title shouldn't be less than 2 words</p>
+          <label>Part</label>
+          <input type="text" formControlName="part" class="form-control" required>
+          <p *ngIf="part.touched && part.invalid" class="error"><sup>*</sup>Please enter valid part</p>
+          <p *ngIf="part.errors?.minlength" class="error"><sup>*</sup>Part shouldn't be less than 2 letters</p>
         </div>
 
         <div class="col-md-12 mb-3">
-          <label>Author</label>
-          <input disabled type="text" formControlName="email" class="form-control" value="{{getCurrentUser()}}">
+          <label>Seller</label>
+          <input disabled type="text" formControlName="seller" class="form-control" value="{{getCurrentUser()}}">
         </div>
 
       </div>
@@ -32,7 +32,7 @@
 
       <div class="form-group text-right">
         <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
-        <button type="submit" class="btn btn-success" [disabled]="!articleForm.valid">Add Article</button>
+        <button type="submit" class="btn btn-success" [disabled]="!articleForm.valid">Add Part</button>
       </div>
 
     </div>

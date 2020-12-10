@@ -15,8 +15,8 @@ export class CrudService {
   
   AddArticle(article: Article) {
     this.articlesRef.push({
-      title: article.title,
-      author: article.author,
+      part: article.part,
+      seller: article.seller,
       description: article.description
     })
   }
@@ -33,8 +33,8 @@ export class CrudService {
 
   UpdateArticle(article: Article) {
     this.articleRef.update({
-      title: article.title,
-      author: article.author,
+      part: article.part,
+      seller: article.seller,
       description: article.description
     })
   }  

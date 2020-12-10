@@ -1,0 +1,25 @@
+.home-container{
+    height:40em; background-size:cover; width:auto;
+    background-image: url(../../assets/backgrd.jpg);
+     background-position:50% 50%;
+
+}
+
+h1, h3{
+    color: #ABD349;
+    text-align: center;
+    font-style: oblique;
+    
+}
+a{
+    color: #ABD349;
+    font-weight: 500;
+    font-size: 35px;
+    margin: 0 18%;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    margin: 100px;
+}

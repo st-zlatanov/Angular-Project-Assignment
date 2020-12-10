@@ -1,6 +1,6 @@
 export interface Article {
     $key: string;
-    title: string;
-    author: string;
+    part: string;
+    seller: string;
     description: string
  }

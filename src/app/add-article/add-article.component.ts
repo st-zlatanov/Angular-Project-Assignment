@@ -32,18 +32,18 @@ export class AddArticleComponent implements OnInit {
 
   articlForm() {
     this.articleForm = this.fb.group({
-      title: ["", [Validators.required, Validators.minLength(2)]],
-      author: new FormControl(localStorage.getItem('email')),
+      part: ["", [Validators.required, Validators.minLength(2)]],
+      seller: new FormControl(localStorage.getItem('email')),
       description: ["",[Validators.required]],
     });
   }
 
-  get title() {
-    return this.articleForm.get("title");
+  get part() {
+    return this.articleForm.get("part");
   }
 
-  get author() {
-    return this.articleForm.get("author");
+  get seller() {
+    return this.articleForm.get("seller");
   }
 
   get description() {
@@ -57,7 +57,7 @@ export class AddArticleComponent implements OnInit {
   submitArticleData() {
     this.crudApi.AddArticle(this.articleForm.value);
     this.toastr.success(
-      this.articleForm.controls["title"].value + " successfully added!"
+      this.articleForm.controls["part"].value + " successfully added!"
     );
     this.ResetForm();
   }
