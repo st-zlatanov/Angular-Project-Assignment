@@ -14,6 +14,7 @@ export class ArticleListComponent implements OnInit {
   hideWhenNoArticle: boolean = false; 
   noData: boolean = false;
   preLoader: boolean = true;
+  edit: boolean = false;
   
 
   constructor(
@@ -53,8 +54,9 @@ export class ArticleListComponent implements OnInit {
   deleteArticle(article) {
     if (window.confirm('Are sure you want to delete this article ?')) {
       this.crudApi.DeleteStudent(article.$key)
-      this.toastr.success(article.title + ' successfully deleted!'); 
+      this.toastr.success(article.part + ' successfully deleted!'); 
     }
   }
+
 
 }

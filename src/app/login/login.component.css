@@ -2,9 +2,23 @@
     width: 65%;
     margin: 0 auto;
     text-align: start;
+    height:40em; background-size:cover; width:auto;
+    background-image: url(../../assets/backgrd.jpg);
+    background-position:50% 50%;
+        
+    
+    
 }
 
 .login {
     align-items: center;
     padding: 3em;
+}
+
+.login h1 {
+    color: whitesmoke;
+}
+
+.login label {
+    color: whitesmoke;
 }

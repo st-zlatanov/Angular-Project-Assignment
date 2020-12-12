@@ -6,17 +6,17 @@
 }
 
 .footer a {
-    padding: 0.4em 0;
+    padding: 0 1em;
 }
 
 .facebook:hover {
-    color: red;
+    color: whitesmoke;
 }
 
 .instagram:hover {
-    color: red;
+    color: whitesmoke;
 }
 
 .twitter:hover {
-    color: red;
+    color: whitesmoke;
 }

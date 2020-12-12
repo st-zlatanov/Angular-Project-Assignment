@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CrudService } from '../shared/crud.service';
-import { ActivatedRoute, Router } from "@angular/router"; // ActivatedRoue is used to get the current associated components information.
-import { Location } from '@angular/common';  // Location service is used to go back to previous component
+import { ActivatedRoute, Router } from "@angular/router";
+import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -29,12 +29,12 @@ export class EditArticleComponent implements OnInit {
       this.editForm.setValue(data)})
   }
 
-  get title() {
-    return this.editForm.get('title');
+  get part() {
+    return this.editForm.get('part');
   }
 
-  get author() {
-    return this.editForm.get('author');
+  get seller() {
+    return this.editForm.get('seller');
   }
 
   get description() {
@@ -43,8 +43,8 @@ export class EditArticleComponent implements OnInit {
 
   updateArticleData() {
     this.editForm = this.fb.group({
-      title: ['', [Validators.required, Validators.minLength(2)]],
-      author: [''],
+      part: ['', [Validators.required, Validators.minLength(2)]],
+      seller: [''],
       description: ['', [Validators.required]],
     })
   }
@@ -55,8 +55,13 @@ export class EditArticleComponent implements OnInit {
 
   updateForm(){
     this.crudApi.UpdateArticle(this.editForm.value);
-    this.toastr.success(this.editForm.controls['title'].value + ' updated successfully');
+    this.toastr.success(this.editForm.controls['part'].value + ' updated successfully');
     this.router.navigate(['view-articles']);
   }
+
+  getCurrentUser(){
+    return localStorage.getItem('email')
+  }
+
 
 }

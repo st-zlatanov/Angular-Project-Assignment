@@ -39,3 +39,11 @@ ul li+li {
     list-style: none;
 }
 
+.nav-link{
+    padding: 0;
+    cursor: pointer;
+}
+
+a{
+    color: whitesmoke;
+}

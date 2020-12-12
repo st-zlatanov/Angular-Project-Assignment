@@ -6,16 +6,21 @@ import { RegisterComponent } from './register/register.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
+import { AngularFireAuthGuard, hasCustomClaim, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectLoggedInToItems = () => redirectLoggedInTo(['view-articles']);
+const belongsToAccount = (next) => hasCustomClaim(`account-${next.params.id}`);
 
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
-  { path: "home", component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'add-article', component: AddArticleComponent },
-  { path: 'view-articles', component: ArticleListComponent },
-  { path: 'edit-article/:id', component: EditArticleComponent },
+  { path: "home", component: HomeComponent},
+  { path: 'login', component: LoginComponent,canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToItems} },
+  { path: 'register', component: RegisterComponent,canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToItems} },
+  { path: 'add-article', component: AddArticleComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin} },
+  { path: 'view-articles', component: ArticleListComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin} },
+  { path: 'edit-article/:id', component: EditArticleComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin} },
 ];
 
 @NgModule({

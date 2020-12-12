@@ -1,0 +1,30 @@
+.edit-container{
+    height:40em; background-size:cover; width:auto;
+    background-image: url(../../assets/backgrd.jpg);
+    background-position:50% 50%;
+    
+
+}
+
+.h2{
+    color: white;
+   text-align: center;
+}
+.heading{
+    margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+label {
+    color: whitesmoke;
+}
+
+form{
+    text-align: center;
+}
+
+.row{
+    justify-content: center;
+}

@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { AngularFireAuth } from '@angular/fire/auth';
+
 
 @Component({
   selector: "app-home",
@@ -6,8 +8,15 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-  constructor(){}
+  isAuth: boolean = false;
+  user: any;
+
+  constructor(private fireAuth: AngularFireAuth){}
 
   ngOnInit(): void {
+    this.fireAuth.authState
+      .subscribe(x => {
+        x ? (this.isAuth = true) : this.isAuth = false;
+      });
   }
 }

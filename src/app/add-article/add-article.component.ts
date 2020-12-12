@@ -7,7 +7,8 @@ import {
   FormControl
 } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
-import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from "@angular/router";
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class AddArticleComponent implements OnInit {
     public crudApi: CrudService,
     public fb: FormBuilder,
     public toastr: ToastrService,
-    private fireAuth: AngularFireAuth
+    private router: Router,
+    private location: Location
   ) {}
 
   ngOnInit() {
@@ -53,6 +55,9 @@ export class AddArticleComponent implements OnInit {
   ResetForm() {
     this.articleForm.reset();
   }
+  goBack() {
+    this.location.back();
+  }
 
   submitArticleData() {
     this.crudApi.AddArticle(this.articleForm.value);
@@ -60,6 +65,7 @@ export class AddArticleComponent implements OnInit {
       this.articleForm.controls["part"].value + " successfully added!"
     );
     this.ResetForm();
+    this.router.navigate(['/view-articles']);
   }
 
   getCurrentUser(){

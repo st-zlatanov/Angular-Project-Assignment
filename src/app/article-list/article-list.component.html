@@ -1,8 +1,10 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Articles List</h1>
+<div class="list-container">
+<div class="heading">
+    <h1 class="h2">Parts List</h1>
     <a routerLink="/add-article" class="btn btn-success" *ngIf="hideWhenNoArticle">
+      
       <i class="fas fa-plus custom-fa-plus"></i>
-      Add Article
+      Add Part
     </a>
   </div>
   
@@ -13,10 +15,10 @@
     </div>
   
     <div class="no-data text-center" *ngIf="noData">
-      <p class="nodata-msg">No articles added yet!</p>
+      <p class="nodata-msg">No parts added yet!</p>
       <a routerLink="/add-article" class="btn btn-success">
         <i class="fas fa-plus custom-fa-plus"></i>
-        Add Article
+        Add Part
       </a>
     </div>
   
@@ -24,16 +26,16 @@
       <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
         <thead>
           <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
+            <th scope="col">Part</th>
+            <th scope="col">Seller</th>
             <th scope="col">Description</th>
             <th class="text-center" scope="col">Edit</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let article of Article | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
-            <td>{{article.title}}</td>
-            <td>{{article.author}}</td>
+            <td>{{article.part}}</td>
+            <td>{{article.seller}}</td>
             <td>{{article.description}}</td>
             <td class="text-center action-block">
               <i class="far fa-edit" routerLink="/edit-article/{{article.$key}}"></i>
@@ -44,3 +46,4 @@
     </div>
     <pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true"></pagination-controls>
   </div>
+</div>

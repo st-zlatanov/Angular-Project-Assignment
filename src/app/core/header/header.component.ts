@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { UserInterface } from './user-interface';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   user: any;
 
 
-  constructor(private fireAuth: AngularFireAuth) { }
+  constructor(private fireAuth: AngularFireAuth, private router: Router) { }
 
   ngOnInit(): void {
     this.fireAuth.authState
@@ -25,6 +25,8 @@ export class HeaderComponent implements OnInit {
 
   logoutUser(event: any) {
     this.fireAuth.signOut();
+    this.isAuth=false;
+    this.router.navigate(['/home']);
     }
 
 }

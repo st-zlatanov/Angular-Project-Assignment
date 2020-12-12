@@ -1,0 +1,29 @@
+.list-container{
+    height:40em; background-size:cover; width:auto;
+    background-image: url(../../assets/backgrd.jpg);
+    background-position:50% 50%;
+    
+
+}
+
+.h2{
+    color: white;
+   
+}
+
+.heading{
+    margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+th, td{
+    color: whitesmoke;
+    font-weight: 800;
+}
+
+.table-responsive{
+    width: 80%;
+    margin: auto;
+}

@@ -1,9 +1,10 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Edit Article Details</h1>
-    <div class="btn-toolbar mb-2 mb-md-0">
-       <div class="btn-group">
-          <button class="btn btn-sm btn-outline-secondary" (click)="goBack()">Go Back</button>
-       </div>
+<div class="edit-container">
+<div class="heading">
+   <br>
+   <br>
+    <h1 class="h2">Edit Part Details</h1>
+    <div class="text-center">
+          <button class="btn-success" (click)="goBack()">Go Back</button>
     </div>
  </div>
  
@@ -16,18 +17,18 @@
                 <div class="col-lg-5 col-md-12 col-sm-12">
                    <div class="row">
                       <div class="col-md-12 mb-3">
-                         <label>Title</label>
-                         <input type="text" formControlName="title" class="form-control" required>
-                         <p *ngIf="title.touched && title.invalid" class="error">
-                             <sup>*</sup>Please enter title
+                         <label>Part</label>
+                         <input type="text" formControlName="part" class="form-control" required>
+                         <p *ngIf="part.touched && part.invalid" class="error">
+                             <sup>*</sup>Please enter part
                          </p>
-                         <p *ngIf="title.errors?.minlength" class="error">
-                             <sup>*</sup>Title shouldn't be less than 2 words
+                         <p *ngIf="part.errors?.minlength" class="error">
+                             <sup>*</sup>Part shouldn't be less than 2 words
                          </p>
                       </div>
                       <div class="col-md-12 mb-3">
-                         <label>Author</label>
-                         <input type="text" formControlName="author" class="form-control">
+                        <label>Seller</label>
+                        <input disabled type="text" formControlName="seller" class="form-control" value="{{getCurrentUser()}}">
                       </div>
                    </div>
                    <div class="row">
@@ -39,7 +40,7 @@
                    </div>
                    <div class="form-group text-right">
                       <button type="submit" class="btn btn-success btn-block" [disabled]="!editForm.valid">
-                          Update Article
+                          Update Part
                       </button>
                    </div>
                 </div>
@@ -49,3 +50,4 @@
        </div>
     </div>
  </div>
+</div>
