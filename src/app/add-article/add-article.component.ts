@@ -37,6 +37,7 @@ export class AddArticleComponent implements OnInit {
       part: ["", [Validators.required, Validators.minLength(2)]],
       seller: new FormControl(localStorage.getItem('email')),
       description: ["",[Validators.required]],
+      price: ["", [Validators.required, Validators.nullValidator]]
     });
   }
 
@@ -50,6 +51,9 @@ export class AddArticleComponent implements OnInit {
 
   get description() {
     return this.articleForm.get("description");
+  }
+  get price() {
+    return this.articleForm.get("price");
   }
 
   ResetForm() {

@@ -17,7 +17,8 @@ export class CrudService {
     this.articlesRef.push({
       part: article.part,
       seller: article.seller,
-      description: article.description
+      description: article.description,
+      price: article.price
     })
   }
 
@@ -35,7 +36,8 @@ export class CrudService {
     this.articleRef.update({
       part: article.part,
       seller: article.seller,
-      description: article.description
+      description: article.description,
+      price: article.price
     })
   }  
 

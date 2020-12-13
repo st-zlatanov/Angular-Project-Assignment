@@ -33,6 +33,11 @@
           <input type="description" formControlName="description" class="form-control" required>
           <p *ngIf="description.touched && description.invalid" class="error"><sup>*</sup>Please provide description</p>
         </div>
+          <div class="col-md-12 mb-3">
+            <label>Price</label>
+            <input type="number" formControlName="price" class="form-control" required>
+            <p *ngIf="price.touched && price.invalid" class="error"><sup>*</sup>Please provide correct price</p>
+          </div>
 
       </div>
 

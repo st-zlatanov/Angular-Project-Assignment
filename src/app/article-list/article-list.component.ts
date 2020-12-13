@@ -14,7 +14,6 @@ export class ArticleListComponent implements OnInit {
   hideWhenNoArticle: boolean = false; 
   noData: boolean = false;
   preLoader: boolean = true;
-  edit: boolean = false;
   
 
   constructor(
