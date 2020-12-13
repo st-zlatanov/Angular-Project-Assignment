@@ -1,5 +1,7 @@
 # MotorTrend Marketplace - sell your car parts Application
 
+App is deployed here: https://angular-blog-project.web.app/home
+
 MotorTrend is a marketplace application built with Angular and Firebase as a project for the SoftUni Angular Course. It's purpose is to provide access to marketplace functionality, where car parts are being sold.
 
 
