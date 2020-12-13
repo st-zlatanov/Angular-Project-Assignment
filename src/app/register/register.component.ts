@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
     if (password === repassword) {
       this.fireAuth.createUserWithEmailAndPassword(username, password).then(a => this.router.navigate(['home'])).catch(err => throwError(err));
     }
+    localStorage.setItem('email', username);
   }
 
 }
