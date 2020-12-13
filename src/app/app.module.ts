@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UserPartsComponent } from './user-parts/user-parts.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FooterComponent,
     AddArticleComponent,
     EditArticleComponent,
-    ArticleListComponent
+    ArticleListComponent,
+    UserPartsComponent
   ],
   imports: [
     BrowserModule,

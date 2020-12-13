@@ -4,23 +4,18 @@ import { Article } from './../shared/article';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-article-list',
-  templateUrl: './article-list.component.html',
-  styleUrls: ['./article-list.component.css']
+  selector: 'app-user-parts',
+  templateUrl: './user-parts.component.html',
+  styleUrls: ['./user-parts.component.css']
 })
-export class ArticleListComponent implements OnInit {
-  p: number = 1;                      
+export class UserPartsComponent implements OnInit {
+  p: number = 1;   
   Article: Article[];                
-  hideWhenNoArticle: boolean = false; 
+  hideWhenNoArticle: boolean = false;
   noData: boolean = false;
   preLoader: boolean = true;
-  
 
-  constructor(
-    public crudApi: CrudService,
-    public toastr: ToastrService
-    ){ }
-
+  constructor( public crudApi: CrudService, public toastr: ToastrService) { }
 
   ngOnInit() {
     this.dataState();
@@ -35,7 +30,6 @@ export class ArticleListComponent implements OnInit {
     })
   }
 
- 
   dataState() {     
     this.crudApi.GetArticlesList().valueChanges().subscribe(data => {
       this.preLoader = false;
@@ -48,14 +42,21 @@ export class ArticleListComponent implements OnInit {
       }
     })
   }
-
-
   deleteArticle(article) {
-    if (window.confirm('Are sure you want to delete this article?')) {
+    if (window.confirm('Are sure you want to delete this article ?')) {
       this.crudApi.DeleteArticle(article.$key)
       this.toastr.success(article.part + ' successfully deleted!'); 
     }
   }
 
+  getCurrentUser(){
+    return localStorage.getItem('email')
+  }
+
+  compareUser(article){
+    if(article.seller===localStorage.getItem('email')){
+      return true;
+    }
+  }
 
 }

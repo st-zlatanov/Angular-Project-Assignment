@@ -1,0 +1,50 @@
+<div class="list-container">
+    <div class="heading">
+        <h1 class="h2">Your Parts List</h1>
+        <a routerLink="/add-article" class="btn btn-success" *ngIf="hideWhenNoArticle">
+          
+          <i class="fas fa-plus custom-fa-plus"></i>
+          Add Part
+        </a>
+      </div>
+      
+      <div class="pricing-header mx-auto">
+        <div class="no-data text-center" *ngIf="preLoader">
+            <img src="assets/preloader.gif" class="preloader-icon">
+          </div>
+      <div class="no-data text-center" *ngIf="noData">
+          <p class="nodata-msg">No parts added yet!</p>
+          <a routerLink="/add-article" class="btn btn-success">
+            <i class="fas fa-plus custom-fa-plus"></i>
+            Add Part
+          </a>
+        </div>
+      
+        <div class="table-responsive" *ngIf="hideWhenNoArticle">
+          <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+            <thead>
+              <tr>
+                <th scope="col">Part</th>
+                <th scope="col">Seller</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th class="text-center" scope="col">Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let article of Article">
+                    <ng-container *ngIf="compareUser(article)">
+                  <td>{{article.part}}</td>
+                  <td>{{article.seller}}</td>
+                  <td>{{article.description}}</td>
+                  <td>{{article.price}}</td>
+                  <td class="text-center action-block">
+                    <i class="far fa-edit" routerLink="/edit-article/{{article.$key}}"></i>
+                    <i class="far fa-trash-alt" (click)="deleteArticle(article)"></i></td>
+                  </ng-container>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>

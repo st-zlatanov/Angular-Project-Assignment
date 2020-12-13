@@ -40,12 +40,16 @@ export class EditArticleComponent implements OnInit {
   get description() {
     return this.editForm.get('description');
   }
+  get price(){
+    return this.editForm.get('price');
+  }
 
   updateArticleData() {
     this.editForm = this.fb.group({
       part: ['', [Validators.required, Validators.minLength(2)]],
       seller: [''],
       description: ['', [Validators.required]],
+      price: ["", [Validators.required, Validators.min(0)]]
     })
   }
 

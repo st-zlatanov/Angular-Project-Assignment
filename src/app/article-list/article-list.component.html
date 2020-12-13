@@ -30,7 +30,6 @@
             <th scope="col">Seller</th>
             <th scope="col">Description</th>
             <th scope="col">Price</th>
-            <th class="text-center" scope="col">Edit</th>
           </tr>
         </thead>
         <tbody>
@@ -39,9 +38,6 @@
             <td>{{article.seller}}</td>
             <td>{{article.description}}</td>
             <td>{{article.price}}</td>
-            <td class="text-center action-block">
-              <i class="far fa-edit" routerLink="/edit-article/{{article.$key}}"></i>
-              <i class="far fa-trash-alt" (click)="deleteArticle(article)"></i></td>
           </tr>
         </tbody>
       </table>

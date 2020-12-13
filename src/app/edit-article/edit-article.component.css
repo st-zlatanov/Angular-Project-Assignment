@@ -17,7 +17,11 @@
   text-align: center;
 }
 
-label {
+label{
+    color: whitesmoke;
+}
+
+p{
     color: whitesmoke;
 }
 
