@@ -1,27 +1,62 @@
-# AngularProjectAssignment
+# MotorTrend Marketplace - sell your car parts Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+MotorTrend is a marketplace application built with Angular and Firebase as a project for the SoftUni Angular Course. It's purpose is to provide access to marketplace functionality, where car parts are being sold.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Routes
+| Route  | Description | Access Level |
+| -------------------------------------------- |
+| /home  | Home Page  | All users |
+| /add-article  | Add Part  | Registered only |
+| /view-articles  | View All Parts For Sale  | Registered only |
+| /user-parts | All parts the current user has for sale  | Registered only |
+| /edit-article/:id  | Edit part  | Registered only |
+| /login  | Login page  | Guests only |
+| /register  | Register page  | Guests only |
 
-## Code scaffolding
+The already logged in user is authenticated to add parts, view parts for sale, view only his parts and edit and delete them.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**Home page**
 
-## Running unit tests
+route: '/home'
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Welcome page.
 
-## Running end-to-end tests
+**Add parts page**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+route: '/add-article'
 
-## Further help
+A page where you can add parts.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+**View All Parts page**
+
+route: '/view-articles'
+
+A page displaying all of the parts, stored in the database.
+
+**User's parts page**
+
+route: '/user-parts'
+
+A page displaying all parts that the current user has for sale. From there he can edit or delete them.
+
+**Edit Part page**
+
+route: '/edit-article/:id'
+
+A page where the seller can edit his part's details.
+
+**Login page**
+
+route: '/login'
+
+A login page.
+
+**Register page**
+
+route: '/register'
+
+A register page.
