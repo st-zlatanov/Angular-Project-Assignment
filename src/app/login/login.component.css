@@ -22,3 +22,8 @@
 .login label {
     color: whitesmoke;
 }
+
+.error{
+    color: red;
+    font-weight: 800;
+}

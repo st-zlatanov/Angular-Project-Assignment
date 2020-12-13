@@ -10,6 +10,7 @@ import { throwError } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  errorMessage : string = '';
 
   constructor(private fireAuth: AngularFireAuth, private router: Router) { }
 
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   loginUser(f: any) {
     let { username, password } = f.value;
-    this.fireAuth.signInWithEmailAndPassword(username, password).then(a => this.router.navigate(['home'])).catch(err => throwError(err));
+    this.fireAuth.signInWithEmailAndPassword(username, password).then(a => this.router.navigate(['home'])).catch(err => this.errorMessage = 'Invalid email or password!');
     localStorage.setItem('email', username);
   }
  

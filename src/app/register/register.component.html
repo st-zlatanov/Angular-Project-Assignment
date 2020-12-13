@@ -18,6 +18,9 @@
                     <br>
                     <input required ngModel type="password" id="rep-password" name="repassword">
                 </p>
+                <div class="error" *ngIf="this.errorMessage != ''">
+                    <p>{{this.errorMessage}}</p>
+                  </div>
                 <p class="submit field">
                     <button class="btn-submit" [disabled]="i.invalid" >Sign Up</button>
                 </p>
