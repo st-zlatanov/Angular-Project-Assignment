@@ -7,7 +7,7 @@ MotorTrend is a marketplace application built with Angular and Firebase as a pro
 
 ## Routes
 | Route  | Description | Access Level |
-| -------------------------------------------- |
+| ------------- | ------------- | ------------- |
 | /home  | Home Page  | All users |
 | /add-article  | Add Part  | Registered only |
 | /view-articles  | View All Parts For Sale  | Registered only |
