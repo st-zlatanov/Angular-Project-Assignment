@@ -1,12 +1,11 @@
+  
 <div class="add-container">
-<div class="heading">
-  <br>
-  <br>
-  <h1 class="h2">Add Part</h1>
-  <div class="text-center">
-    <button class="btn-success" (click)="goBack()">Go Back</button>
-</div>
-</div>
+  <div class="heading">
+    <h1 class="h2">Add Part</h1>
+    <div class="text-center">
+      <button class="btn-success" (click)="goBack()">Go Back</button>
+  </div>
+  </div>
 
 <form [formGroup]="articleForm" (ngSubmit)="submitArticleData()" novalidate>
   <div class="row">

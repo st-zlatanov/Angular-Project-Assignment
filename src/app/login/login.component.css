@@ -21,9 +21,21 @@
 
 .login label {
     color: whitesmoke;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .error{
     color: red;
     font-weight: 800;
 }
+
+.email input{
+    padding: 20px;
+}
+.password input{
+    padding: 20px;
+}
+
+
+

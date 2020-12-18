@@ -22,7 +22,24 @@
       </a>
     </div>
   
-    <div class="table-responsive" *ngIf="hideWhenNoArticle">
+<ul>
+  <li *ngFor="let article of Article | paginate: { itemsPerPage: 4, currentPage: p }; let i = index;">
+    <div class="productContainer">
+      <div class="card">
+        <h1>{{article.part}}</h1>
+        <p>{{article.description}}</p>
+        <p class="price">${{article.price}}</p>
+        <p>{{article.seller}}</p>
+      </div>
+    </div>
+  </li>
+</ul>
+<pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true"></pagination-controls>
+
+
+  </div>
+</div> 
+ <!-- <div class="table-responsive" *ngIf="hideWhenNoArticle">
       <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
         <thead>
           <tr>
@@ -42,6 +59,5 @@
         </tbody>
       </table>
     </div>
-    <pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true"></pagination-controls>
-  </div>
-</div>
+    <pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true"></pagination-controls>-->
+ 

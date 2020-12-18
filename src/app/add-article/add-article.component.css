@@ -13,7 +13,9 @@
 .heading{
     margin: auto;
   width: 50%;
+  height: 100px;
   padding: 10px;
+  
 }
 
 label {
@@ -29,4 +31,10 @@ form{
 }
 p{
     color: whitesmoke;
+}
+
+button{
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
 }

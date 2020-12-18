@@ -25,4 +25,21 @@
     font-weight: 800;
 }
 
+.email input{
+    padding: 20px;
+}
+.password input{
+    padding: 20px;
+}
+
+.email label{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.password label{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 

@@ -3,6 +3,11 @@
     align-items: center;
     min-height: 3em;
     background-color: #ABD349;
+    padding-bottom: 1em;
+}
+
+#footer-text{
+    padding-top: 30px;
 }
 
 .footer a {
