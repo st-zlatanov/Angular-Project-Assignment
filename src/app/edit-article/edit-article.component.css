@@ -13,12 +13,14 @@
 .heading{
     margin: auto;
   width: 50%;
+  height: 100px;
   padding: 10px;
-  text-align: center;
 }
 
 label{
     color: whitesmoke;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 p{
@@ -31,4 +33,10 @@ form{
 
 .row{
     justify-content: center;
+}
+
+button{
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
 }
