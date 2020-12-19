@@ -1,0 +1,63 @@
+<div class="list-container">
+  <div class="heading">
+    <h1 class="h2">Your Parts List</h1>
+    <a
+      routerLink="/article/add-article"
+      class="btn btn-success"
+      *ngIf="hideWhenNoArticle"
+    >
+      <i class="fas fa-plus custom-fa-plus"></i>
+      Add Part
+    </a>
+  </div>
+
+  <div class="pricing-header mx-auto">
+    <div class="no-data text-center" *ngIf="preLoader">
+      <img src="assets/preloader.gif" class="preloader-icon" />
+    </div>
+
+    <div class="no-data text-center" *ngIf="noData">
+      <p class="nodata-msg">No parts added yet!</p>
+      <a routerLink="/article/add-article" class="btn btn-success">
+        <i class="fas fa-plus custom-fa-plus"></i>
+        Add Part
+      </a>
+    </div>
+
+    <ul>
+      <li
+        *ngFor="
+          let article of Article
+            | paginate: { itemsPerPage: 4, currentPage: p };
+          let i = index
+        "
+      >
+        <ng-container *ngIf="compareUser(article)">
+          <div class="productContainer">
+            <div class="card">
+              <h1>{{ article.part }}</h1>
+              <p>{{ article.description }}</p>
+              <p class="price">${{ article.price }}</p>
+              <p>{{ article.seller }}</p>
+              <section class="edit">
+                <i
+                  class="far fa-edit"
+                  routerLink="/edit-article/{{ article.$key }}"
+                ></i>
+                <i
+                  class="far fa-trash-alt"
+                  (click)="deleteArticle(article)"
+                ></i>
+              </section>
+            </div>
+          </div>
+        </ng-container>
+      </li>
+    </ul>
+    <pagination-controls
+      (pageChange)="p = $event"
+      autoHide="true"
+      responsive="true"
+    ></pagination-controls>
+  </div>
+</div>

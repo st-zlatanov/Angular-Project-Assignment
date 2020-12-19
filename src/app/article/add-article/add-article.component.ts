@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { CrudService } from "../shared/crud.service";
+import { CrudService } from "../../services/crud.service";
 import {
   FormBuilder,
   FormGroup,
@@ -69,7 +69,7 @@ export class AddArticleComponent implements OnInit {
       this.articleForm.controls["part"].value + " successfully added!"
     );
     this.ResetForm();
-    this.router.navigate(['/view-articles']);
+    this.router.navigate(['article/view-articles']);
   }
 
   getCurrentUser(){

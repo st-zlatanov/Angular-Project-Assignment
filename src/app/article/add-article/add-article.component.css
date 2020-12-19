@@ -1,6 +1,6 @@
-.edit-container{
+.add-container{
     height:40em; background-size:cover; width:auto;
-    background-image: url(../../assets/backgrd.jpg);
+    background-image: url(../../../assets/backgrd.jpg);
     background-position:50% 50%;
     
 
@@ -15,16 +15,13 @@
   width: 50%;
   height: 100px;
   padding: 10px;
+  
 }
 
-label{
+label {
     color: whitesmoke;
     font-size: 1.2em;
     font-weight: bold;
-}
-
-p{
-    color: whitesmoke;
 }
 
 form{
@@ -33,6 +30,9 @@ form{
 
 .row{
     justify-content: center;
+}
+p{
+    color: whitesmoke;
 }
 
 button{

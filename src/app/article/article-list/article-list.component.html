@@ -1,8 +1,8 @@
 <div class="list-container">
   <div class="heading">
-    <h1 class="h2">Your Parts List</h1>
+    <h1 class="h2">Parts List</h1>
     <a
-      routerLink="/add-article"
+      routerLink="/article/add-article"
       class="btn btn-success"
       *ngIf="hideWhenNoArticle"
     >
@@ -18,7 +18,7 @@
 
     <div class="no-data text-center" *ngIf="noData">
       <p class="nodata-msg">No parts added yet!</p>
-      <a routerLink="/add-article" class="btn btn-success">
+      <a routerLink="/article/add-article" class="btn btn-success">
         <i class="fas fa-plus custom-fa-plus"></i>
         Add Part
       </a>
@@ -32,26 +32,14 @@
           let i = index
         "
       >
-        <ng-container *ngIf="compareUser(article)">
-          <div class="productContainer">
-            <div class="card">
-              <h1>{{ article.part }}</h1>
-              <p>{{ article.description }}</p>
-              <p class="price">${{ article.price }}</p>
-              <p>{{ article.seller }}</p>
-              <section class="edit">
-                <i
-                  class="far fa-edit"
-                  routerLink="/edit-article/{{ article.$key }}"
-                ></i>
-                <i
-                  class="far fa-trash-alt"
-                  (click)="deleteArticle(article)"
-                ></i>
-              </section>
-            </div>
+        <div class="productContainer">
+          <div class="card">
+            <h1>{{ article.part }}</h1>
+            <p>{{ article.description }}</p>
+            <p class="price">${{ article.price }}</p>
+            <p>{{ article.seller }}</p>
           </div>
-        </ng-container>
+        </div>
       </li>
     </ul>
     <pagination-controls

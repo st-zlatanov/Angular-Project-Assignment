@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CrudService } from '../shared/crud.service';
+import { CrudService } from '../../services/crud.service';
 import { ActivatedRoute, Router } from "@angular/router";
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
@@ -60,7 +60,7 @@ export class EditArticleComponent implements OnInit {
   updateForm(){
     this.crudApi.UpdateArticle(this.editForm.value);
     this.toastr.success(this.editForm.controls['part'].value + ' updated successfully');
-    this.router.navigate(['view-articles']);
+    this.router.navigate(['article/view-articles']);
   }
 
   getCurrentUser(){

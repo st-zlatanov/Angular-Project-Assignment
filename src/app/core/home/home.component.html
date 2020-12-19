@@ -7,14 +7,14 @@
     <h1>Welcome to the Motor Trend Marketplace</h1>
     <h3>Here you will find car parts for sale and you can also sell yours</h3>
     <div *ngIf="!isAuth" class="links">
-<a routerLink="/register">Get Started</a>
+<a routerLink="/user/register">Get Started</a>
 <br>
-<a routerLink="/login">Log In</a>
+<a routerLink="/user/login">Log In</a>
 </div>
 <div *ngIf="isAuth" class="links">
-    <a routerLink="/add-article">Add parts</a>
+    <a routerLink="/article/add-article">Add parts</a>
     <br>
-    <a routerLink="/view-articles">View Parts</a>
+    <a routerLink="/article/view-articles">View Parts</a>
     </div>
 </section>
 </div>

@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.fireAuth.authState
       .subscribe(x => {
-        x ? (this.isAuth = true, this.user = x.toJSON(), console.log(x.toJSON())) : this.isAuth = false;
+        x ? (this.isAuth = true, this.user = x.toJSON()) : this.isAuth = false;
       });
   }
 
