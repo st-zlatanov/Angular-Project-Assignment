@@ -21,18 +21,6 @@
   text-align: center;
 }
 
-/*
-th, td{
-    color: whitesmoke;
-    font-weight: 800;
-}
-
-.table-responsive{
-    width: 80%;
-    margin: auto;
-    background-color: #ABD349;
-} */
-
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
@@ -66,7 +54,4 @@ th, td{
       padding: 30px ;
     min-width: 300px;
 }
-/* 
-  div{
-      display: inline-block !important;
-  } */
+
